@@ -1,0 +1,14 @@
+def tree_by_levels(node):
+    if not node:
+        return []
+    result = [node.value]
+    step = [node.left,node.right]
+    while step:
+        node = step[0]
+        if node.left:
+            step.append(node.left)
+        if node.right:
+            step.append(node.right)
+        step.pop(0)
+        result.append(node.value)
+    return result
